@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}API Endpoint{% endblock %}
+{% block content %}
+<h1>API Endpoint</h1>
+This is the API endpoint for Playfriend.
+<h3>Active application identifiers</h3>
+<ul>
+{% for game in get_games() %}
+<li>{{ game.name }}</li>	
+{% endfor %}
+</ul>
+{% endblock %}

@@ -9,24 +9,12 @@ var router = Router()
 var api = Router()
 router.use('/api/', api);
 
-function get_games()
-{
-	console.log("aah");
-	return [ {name:'apa'}, {name:'banan'}];
-}
-
 router.get('/', function (req, res) {	  
   res.setHeader('Content-Type', 'text/html; charset=utf-8')
   res.end(swig.renderFile('templates/index.html', { get_games: get_games }))
 })
 
-api.get('/token/:token', function(req, res) {
-	console.log(req.params)
-	res.end('Yes [' + req.params.token + "]")
-})
-
-api.post('/account/create', function(req, res){
-		
+api.post('/account/create', function(req, res){	
 	
 })
  
@@ -34,4 +22,4 @@ var server = http.createServer(function(req, res) {
   router(req, res, finalhandler(req, res))
 })
  
-server.listen(8888)
+server.listen(9999)
