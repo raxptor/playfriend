@@ -25,9 +25,12 @@ api.get('/token/:token', function(req, res) {
 	res.end('Yes [' + req.params.token + "]")
 })
 
+api.get('/account/create', function(req, res){
+	res.end('Getting account');
+})
+
 api.post('/account/create', function(req, res){
-		
-	
+		res.end('Creating account');
 })
  
 var server = http.createServer(function(req, res) {
